@@ -11,34 +11,34 @@ if(isset($_POST['login'])){
     $pass = $_POST['password'];
     $repass = $_POST['repassword'];
 
-    if((strlen($login)<1 || (strlen($login)>20)))
+    if((strlen($login)<2 || (strlen($login)>20)))
     {
         $validation = false;
-        $_SESSION['e_login'] = "login <1 and >20";
+        $_SESSION['e_login'] = "login must be from 2 to 20";
     }
 
     if(ctype_alnum($login)==false)
     {
         $validation = false;
-        $_SESSION['e_login'] = "login alnum";
+        $_SESSION['e_login'] = "contain only letters numbers";
     }
 
     if(filter_var($email_after, FILTER_VALIDATE_EMAIL)==false || ($email_after!=$email))
     {
         $validation = false;
-        $_SESSION['e_email'] = "email dont correct";
+        $_SESSION['e_email'] = "invalid email domains";
     }
 
     if((strlen($pass)<1 || (strlen($pass)>20)))
     {
         $validation = false;
-        $_SESSION['e_pass'] = "pass <1 and >20";
+        $_SESSION['e_pass'] = "password must be from 5 to 20";
     }
 
     if($pass != $repass)
     {
         $validation = false;
-        $_SESSION['e_pass'] = "not the same";
+        $_SESSION['e_pass'] = "passwords didnt mutch";
     }
 
     $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
@@ -47,7 +47,7 @@ if(isset($_POST['login'])){
     if(!isset($_POST['terms']))
     {
         $validation = false;
-        $_SESSION['e_terms'] = "accept terms";
+        $_SESSION['e_terms'] = "checkbox has been checked";
     }
 
     require_once "db_data.php";
@@ -70,7 +70,7 @@ if(isset($_POST['login'])){
             if($result->num_rows>0)
             {
                 $validation = false;
-                $_SESSION['e_email'] = "alredy used";    
+                $_SESSION['e_email'] = "email alredy used";    
             }
 
             $result = $sql->query("select id from users where login='$login'");
@@ -81,13 +81,13 @@ if(isset($_POST['login'])){
             if($result->num_rows>0)
             {
                 $validation = false;
-                $_SESSION['e_login'] = "alredy used";    
+                $_SESSION['e_login'] = "login alredy used";    
             }
 
             if($validation==true)
             {
-                if($sql->query("insert into users value(null, '$login', 
-                '$pass_hash', '$email', 0)")){
+                if($sql->query("insert into users(login, password, email) value('$login', 
+                '$pass_hash', '$email')")){
                     $_SESSION['validated']=true;
                     header('Location: successful_sing_up.php');
                 }
@@ -98,7 +98,7 @@ if(isset($_POST['login'])){
     }
     catch(Exception $e)
     {
-        echo '<span style="color:red;"> sry but server error</span>';
+        echo '<span style="color:red;">sorry, server error</span>';
         echo '<br> dev info: '.$e;
     }
 }
@@ -117,7 +117,7 @@ if(isset($_POST['login'])){
         <div class="nav__container">
             <div class="nav__logo">
                 <a href="index.php">www.Buchta.com</a>
-            </div>
+            </div>`
             <div class="nav__buttons">
                 <ul class="navbar">
                     <div style="display:flex;">

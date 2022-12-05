@@ -129,25 +129,24 @@ if($sql->connect_errno!=0){
             </form>
             <h1 class="form__header">comments</h1>
             <?php
-                        $result = mysqli_query($sql, "select date,comment from comments where user_id=".$_SESSION['id']." ORDER by date desc;");
-                        while($row = $result->fetch_assoc()){
-                            echo<<<END
-                            <div class="aboutme" style="width: 820px;flex-direction: column">
-                                <div style="width: 700px;display: flex; justify-content: space-between;"> 
-                                <div>{$_SESSION['login']} </div>
-                                <div>{$row['date']}</div>
-                                </div>
-                            <br>
-                            <div>
+                $result = mysqli_query($sql, "select date,comment from comments where user_id=".$_SESSION['id']." ORDER by date desc;");
+                while($row = $result->fetch_assoc()){
+                    echo<<<END
+                    <div class="aboutme" style="width: 820px;flex-direction: column">
+                        <div style="width: 700px;display: flex; justify-content: space-between;"> 
+                            <div>{$_SESSION['login']} </div>
+                            <div>{$row['date']}</div>
+                        </div>
+                        <br>
+                        <div>
                             <p style="width:700px; word-wrap: break-word">{$row['comment']}</p>
-                            </div>
-                            </div>
-                            <br>
-                            <br>
-                            END;
-                            unset($_SESSION['text']);
-                        }       
-                ?>
+                        </div>
+                    </div>
+                    <br><br>
+                    END;
+                    unset($_SESSION['text']);
+                }       
+            ?>
         </main>
         <div style="height: 70px"   ></div>
     </div>

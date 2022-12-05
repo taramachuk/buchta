@@ -107,7 +107,7 @@ if(isset($_POST['login'])){
 require 'templates/navigation.php';
 ?>
     <div class="container form">
-    <h1 class="form__header">sing up</h1>
+    <h1 class="form__header">sign up</h1>
     <form  method="post">
         <div class="aboutme" style="width: 250px;display: flex; flex-direction: column;">
             

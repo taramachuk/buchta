@@ -40,7 +40,7 @@
                         } else {
                             echo<<<END
                             <div style="display:flex">
-                                <li class="nav__items"><a class="nav__links" href="sing_up_template.php">sing up</a></li>
+                                <li class="nav__items"><a class="nav__links" href="sign_up_template.php">sign up</a></li>
                                 <div class="dropdown">
                                     <div class="nav__items dropdown-btn">
                                         <a class="nav__links" href="log_in_template.php">log in</a>

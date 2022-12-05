@@ -5,7 +5,7 @@ session_start();
 require 'templates/navigation.php';
 ?>
     <div class="container form">
-        <h1 class="form__header">successful sing up</h1>
+        <h1 class="form__header">successful sign up</h1>
 
     </div>
 <?php

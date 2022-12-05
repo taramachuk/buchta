@@ -102,11 +102,13 @@ if(isset($_POST['login'])){
         echo '<br> dev info: '.$e;
     }
 }
-?>
-<?php
+
+//navigation
 require 'templates/navigation.php';
 ?>
-    <div class="container form">
+
+<!-- content -->
+<div class="container form">
     <h1 class="form__header">sign up</h1>
     <form  method="post">
         <div class="aboutme" style="width: 250px;display: flex; flex-direction: column;">
@@ -154,13 +156,13 @@ require 'templates/navigation.php';
                 unset($_SESSION['e_terms']);
             }
             ?>
-            
-
             <br>
             <input type="submit" value="log in" style="height:25px; width: 70px;">
         </div>
     </form>
-    </div>
+</div>
+
+<!-- footer -->
 <?php
 require 'templates/footer.php';
 ?>

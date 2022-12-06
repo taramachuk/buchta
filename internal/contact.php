@@ -1,10 +1,3 @@
-<?php
-session_start();
-
-//navigation
-require 'templates/navigation.php';
-?>
-
 <!-- content -->
 <div>
     <main class="container form">
@@ -46,8 +39,3 @@ require 'templates/navigation.php';
         </form>
     </main>
 </div>
-
-<!-- footer -->
-<?php
-require 'templates/footer.php';
-?>

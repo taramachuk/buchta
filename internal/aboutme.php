@@ -1,9 +1,4 @@
-<?php
-session_start();
 
-// navigation
-require 'templates/navigation.php';
-?>
 
 <!-- content -->
 <div>
@@ -82,7 +77,3 @@ require 'templates/navigation.php';
     </main>
 </div>
 
-<!-- footer -->
-<?php
-require 'templates/footer.php';
-?>

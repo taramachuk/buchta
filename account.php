@@ -50,7 +50,7 @@ require 'templates/navigation.php';
         <h1 class="form__header">add comment</h1>
         <form action="" method="post">
         <div class="aboutme" style="display: flex; flex-direction: column;">
-                <textarea style="resize: none;" rows="7" cols="103" name="text"></textarea>
+                <textarea maxlength="65535" style="resize: none;" rows="7" cols="103" name="text"></textarea>
                 <br>    
                 <input type="submit" value="post" style="height:25px; width: 70px;">
             </div>

@@ -45,41 +45,30 @@
                     END;
                 } else {
                     echo<<<END
-<div style="display:flex">
+                    <div style="display:flex">
 
-    <form style="display:flex;" action="index.php" method="GET">
-
-        <input type="submit" name="p" value="sign up" class="nav__links nav__items" style="border: 0;">
-
-        <input type="submit" name="p" value="log in" class="nav__links nav__items" style="border: 0;">
-
-    </form>
-
-        <div class="dropdown">
-
-            <div class="nav__items dropdown-btn">   
-
-                <a class="nav__links" href="log_in_template.php">log in old</a>
-
-            </div>
-
-        <div class="dropdown-menu">
-            <form action="./logic/log_in.php" method="post">
-                <div class="--log">
-                    <label for="text">login:</label>
-                    <input type="text" name="login">
-                    <br>
-                    <label for="password">password:</label>
-                    <input type="password" name="password">
-                    <br>
-                    <input type="submit" value="log in">
-                </div>
-            </form>
-        </div>
-    </form>
-
-</div>
-END;
+                        <form style="display:flex;" action="index.php" method="GET">
+                            <input type="submit" name="p" value="sign up" class="nav__links nav__items" style="border: 0;">
+                            <div class="dropdown">
+                                <div class="nav__items dropdown-btn" style="display:flex">   
+                                    <input type="submit" name="p" value="log in" class="nav__links nav__items dropdown-btn" style="border: 0;"> 
+                                </div>
+                        </form>
+                            <div class="dropdown-menu">
+                                <form action="./logic/log_in.php" method="post">
+                                    <div class="--log">
+                                        <label for="text">login:</label>
+                                        <input type="text" name="login">
+                                        <br>
+                                        <label for="password">password:</label>
+                                        <input type="password" name="password">
+                                        <br>
+                                        <input type="submit" value="log in">
+                                    </div>
+                                </form>
+                            </div>
+                    </div>
+                    END;
                 }
                 ?>                
             </div>

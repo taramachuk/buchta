@@ -14,13 +14,13 @@ if(isset($_POST['login'])){
     if((strlen($login)<2 || (strlen($login)>20)))
     {
         $validation = false;
-        $_SESSION['e_login'] = "login must be from 2 to 20";
+        $_SESSION['e_login'] = "login must be from 2 to 20 char";
     }
 
     if(ctype_alnum($login)==false)
     {
         $validation = false;
-        $_SESSION['e_login'] = "contain only letters numbers";
+        $_SESSION['e_login'] = "login must be alpha-numeric";
     }
 
     if(filter_var($email_after, FILTER_VALIDATE_EMAIL)==false || ($email_after!=$email))
@@ -38,7 +38,7 @@ if(isset($_POST['login'])){
     if($pass != $repass)
     {
         $validation = false;
-        $_SESSION['e_pass'] = "passwords didnt mutch";
+        $_SESSION['e_pass'] = "passwords didnt match";
     }
 
     $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
@@ -47,7 +47,7 @@ if(isset($_POST['login'])){
     if(!isset($_POST['terms']))
     {
         $validation = false;
-        $_SESSION['e_terms'] = "checkbox has been checked";
+        $_SESSION['e_terms'] = "checkbox must be checked";
     }
 
     require_once "db_data.php";

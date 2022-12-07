@@ -3,7 +3,7 @@
 session_start();
 
 if($_SESSION['logged']){ 
-    header('Location: index.php');
+    header('Location: ./index.php');
     exit();
 }
 
@@ -31,16 +31,16 @@ if($sql->connect_errno!=0){
             $_SESSION['login'] = $row['login'];
             $_SESSION['email'] = $row['email'];
             $_SESSION['money'] = $row['money'];
-            header('Location: ../account.php');
+            header('Location: ../index.php?p=account');
             } else {
                 #wrong pass
                 $_SESSION['login_failed'] = '<span style="color:red"> wrong login or !!!password</span>';
-                header('Location: ../internal/log_in_template.php');
+                header('Location: ../index.php?p=log+in');
             }
         } else {
             #wrong login
             $_SESSION['login_failed'] = '<span style="color:red"> wrong !!!login or password</span>';
-            header('Location: ../internal/log_in_template.php');
+            header('Location: ../index.php?p=log+in');
         }
 
     }

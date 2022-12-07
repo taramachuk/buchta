@@ -21,8 +21,7 @@ if(!isset($_GET['p'])){
         </main>
     </div>
     END;
-}
-
+}else 
 //others pages
 if($_GET['p']=='main') {
 
@@ -51,6 +50,9 @@ if($_GET['p']=='main') {
 } else if ($_GET['p']=='log in template') {
 
     include 'internal/successful_sign_up.php';
+} else if ($_GET['p']=='account') {
+
+    include 'internal/account.php';
 }
 ?>
 

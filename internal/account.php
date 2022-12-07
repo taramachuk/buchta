@@ -1,5 +1,5 @@
 <?php
-session_start();
+@session_start();
 
 if((isset($_SESSION['logged']))&&($_SESSION['logged'] == true)){
 
@@ -27,8 +27,6 @@ if($sql->connect_errno!=0){
     
 }   
 
-//navigation
-require 'templates/navigation.php';
 ?>
 
 <!-- content -->
@@ -78,8 +76,3 @@ require 'templates/navigation.php';
     </main>
     <div style="height: 70px"   ></div>
 </div>
-
-<!-- footer -->
-<?php
-require 'templates/footer.php';
-?>

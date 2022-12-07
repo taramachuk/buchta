@@ -355,6 +355,7 @@ margin-right: 40px;
     color: #fff;
     background: #ff00db;
     background: linear-gradient(to right top, #ff00db, #0800ff);
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 

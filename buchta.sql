@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Час створення: Гру 05 2022 р., 20:08
+-- Час створення: Гру 07 2022 р., 23:23
 -- Версія сервера: 10.4.25-MariaDB
 -- Версія PHP: 8.1.10
 
@@ -34,14 +34,6 @@ CREATE TABLE `comments` (
   `comment` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Дамп даних таблиці `comments`
---
-
-INSERT INTO `comments` (`id`, `user_id`, `date`, `comment`) VALUES
-(29, 5, '2022-12-05 20:07:59', 'taras'),
-(30, 5, '2022-12-05 20:08:03', 'taras lox');
-
 -- --------------------------------------------------------
 
 --
@@ -55,13 +47,6 @@ CREATE TABLE `users` (
   `email` varchar(255) DEFAULT NULL,
   `money` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Дамп даних таблиці `users`
---
-
-INSERT INTO `users` (`id`, `login`, `password`, `email`, `money`) VALUES
-(5, 'taras', '$2y$10$ysgDmFhjYorytSPjBNmZ9.p8iYp28ipTq46C6hSm2J0sp8NqU1xgC', 'taras@gmail.com', 0);
 
 --
 -- Індекси збережених таблиць
@@ -88,13 +73,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблиці `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблиці `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Обмеження зовнішнього ключа збережених таблиць

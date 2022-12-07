@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>about me</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gitstyle.css">
     <link rel="stylesheet" href="anime.css">
 </head>
 <body>
@@ -37,18 +37,23 @@
                 if((isset($_SESSION['logged'])) && ($_SESSION['logged'] == true)){
                     echo<<<END
                     <div style="display:flex;">
-                        <li class="nav__items"><a class="nav__links" href="account.php">account</a></li>
-                        <li class="nav__items"><a class="nav__links" href="log_out.php">log out</a></li>    
+                        <form style="display:flex;" action="index.php" method="GET">
+                            <input type="submit" name="p" value="account" class="nav__links nav__items" style="border: 0;">
+                            <li class="nav__items"><a class="nav__links" href="./logic/log_out.php">log out</a></li>
+                        </form>
                     </div>
                     END;
                 } else {
                     echo<<<END
                     <div style="display:flex">
-                        <li class="nav__items"><a class="nav__links" href="sign_up_template.php">sign up</a></li>
-                        <div class="dropdown">
-                            <div class="nav__items dropdown-btn">
-                                <a class="nav__links" href="log_in_template.php">log in</a>
+                        <form style="display:flex;" action="index.php" method="GET">
+                            <input type="submit" name="p" value="sign up" class="nav__links nav__items" style="border: 0;">
+                            <input type="submit" name="p" value="log in" class="nav__links nav__items" style="border: 0;">
+                            <div class="dropdown">
+                                <div class="nav__items dropdown-btn">   
+                                <a class="nav__links" href="log_in_template.php">log in old</a>
                             </div>
+                            </form>
                             <div class="dropdown-menu">
                                 <form action="log_in.php" method="post">
                                     <div class="--log">

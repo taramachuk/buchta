@@ -1,5 +1,5 @@
 <?php
-session_start();
+@session_start();
 
 if(isset($_POST['login'])){
 
@@ -105,8 +105,6 @@ if(isset($_POST['login'])){
     }
 }
 
-//navigation
-require 'templates/navigation.php';
 ?>
 
 <!-- content -->
@@ -164,7 +162,3 @@ require 'templates/navigation.php';
     </form>
 </div>
 
-<!-- footer -->
-<?php
-require 'templates/footer.php';
-?>

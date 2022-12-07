@@ -35,7 +35,22 @@ if($_GET['p']=='main') {
 } else if($_GET['p']=='contact') {
 
     include 'internal/contact.php';
+    
+} else if ($_GET['p']=='successful sign up') {
 
+    include 'internal/successful_sign_up.php';
+
+} else if ($_GET['p']=='sign up') {
+
+    include 'internal/sign_up_template.php';
+
+} else if ($_GET['p']=='log in') {
+
+    include 'internal/log_in_template.php';
+
+} else if ($_GET['p']=='log in template') {
+
+    include 'internal/successful_sign_up.php';
 }
 ?>
 

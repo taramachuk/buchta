@@ -7,7 +7,7 @@ if($_SESSION['logged']){
     exit();
 }
 
-require_once "db_data.php";
+require_once "../db_data.php";
 
 $sql = @new mysqli($host, $db_user, $db_pass, $db_base);
 
@@ -31,16 +31,16 @@ if($sql->connect_errno!=0){
             $_SESSION['login'] = $row['login'];
             $_SESSION['email'] = $row['email'];
             $_SESSION['money'] = $row['money'];
-            header('Location: account.php');
+            header('Location: ../account.php');
             } else {
                 #wrong pass
                 $_SESSION['login_failed'] = '<span style="color:red"> wrong login or !!!password</span>';
-                header('Location: log_in_template.php');
+                header('Location: ../internal/log_in_template.php');
             }
         } else {
             #wrong login
             $_SESSION['login_failed'] = '<span style="color:red"> wrong !!!login or password</span>';
-            header('Location: log_in_template.php');
+            header('Location: ../internal/log_in_template.php');
         }
 
     }
